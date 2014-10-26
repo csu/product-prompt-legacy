@@ -1,1 +1,1 @@
-$(function(){});
+$(function(){var t=["alarm clock","television","microwave","keyboard","water bottle","eBook reader","phone","chair","trash can"],e=["for the blind","for the elderly","for children","for families with children","for the deaf","for the mute","for the paralyzed"];$("#prompt-btn").click(function(){var r,o=t[Math.floor(Math.random()*t.length)];r="a"==o.charAt(0)?"Design an ":"Design a ",$("#prompt").text(r+o+" "+e[Math.floor(Math.random()*e.length)]+"."),$(this).text("Get another prompt!")})});
