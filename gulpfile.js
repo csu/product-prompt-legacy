@@ -1,7 +1,8 @@
 var gulp = require('gulp'),
     minifyHTML = require('gulp-minify-html'),
     minifyCSS = require('gulp-minify-css'),
-    rename = require("gulp-rename");
+    rename = require("gulp-rename"),
+    uglify = require('gulp-uglify');
 
 gulp.task('index', function() {
     gulp.src('./src/index.html')
@@ -11,6 +12,10 @@ gulp.task('index', function() {
     gulp.src('./src/index.css')
         .pipe(minifyCSS())
         .pipe(rename('index.css'))
+        .pipe(gulp.dest('.'))
+    gulp.src('./src/index.js')
+        .pipe(uglify())
+        .pipe(rename('index.js'))
         .pipe(gulp.dest('.'))
 });
 
@@ -22,5 +27,9 @@ gulp.task('build', function() {
     gulp.src('./src/index.css')
         .pipe(minifyCSS())
         .pipe(rename('index.css'))
+        .pipe(gulp.dest('.'))
+    gulp.src('./src/index.js')
+        .pipe(uglify())
+        .pipe(rename('index.js'))
         .pipe(gulp.dest('.'))
 });
