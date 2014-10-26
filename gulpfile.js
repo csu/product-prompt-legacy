@@ -15,9 +15,9 @@ gulp.task('index', function() {
     gulp.src('./src/index.css')
         .pipe(minifyCSS())
         .pipe(rename('index.css'))
-        .pipe(gulp.dest('.'))
+        .pipe(gulp.dest('./assets/css'))
     gulp.src('./src/index.js')
         .pipe(uglify())
         .pipe(rename('index.js'))
-        .pipe(gulp.dest('.'))
+        .pipe(gulp.dest('./assets/js'))
 });
